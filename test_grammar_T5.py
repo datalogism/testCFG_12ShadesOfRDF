@@ -111,10 +111,6 @@ from transformers_cfg.recognizer import StringRecognizer
 with open("/user/cringwal/home/Desktop/turtle_light_facto2.ebnf", "r") as file:
     grammar_str = file.read()
 
-eos_token = " ."
-eos_token_id = tokenizer.encode(eos_token, padding=True, spaces_between_special_tokens = True)["input_ids"]
-
-
 grammar = IncrementalGrammarConstraint(grammar_str, "root", tokenizer)
 grammar_processor = GrammarConstrainedLogitsProcessor(grammar)
 
